@@ -88,7 +88,7 @@
           this.dialogImageUrl = file.response;
           this.$emit("input", file.response)
         } else {
-          this.fileList.push(file)
+          this.fileList.push(file);
           this.$emit("input", this.fileList.map(f => f.response))
         }
       },

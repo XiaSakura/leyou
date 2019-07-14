@@ -146,7 +146,7 @@
     created() {
       this.loadData(0).then(data => {
         this.options = data;
-      })
+      });
       if(this.required){
         this.defaultRules.push(v => v.length > 0 || this.label + "不能为空");
       }
