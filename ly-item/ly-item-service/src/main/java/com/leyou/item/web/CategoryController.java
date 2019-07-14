@@ -45,4 +45,11 @@ public class CategoryController {
         categoryService.deleteCategory(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
+
+    @GetMapping("bid/{bid}")
+    public ResponseEntity<List<Category>> queryByBrandId(
+            @PathVariable("bid") Long bid
+    ){
+        return ResponseEntity.ok(categoryService.queryByBrandId(bid));
+    }
 }

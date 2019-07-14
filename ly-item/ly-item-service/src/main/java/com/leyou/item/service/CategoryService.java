@@ -7,6 +7,8 @@ import java.util.List;
 public interface CategoryService {
     List<Category> queryByParentId(Long pid);
 
+    List<Category> queryByBrandId(Long bid);
+
     void saveCategory(Category category);
 
     void updateCategory(Category category);

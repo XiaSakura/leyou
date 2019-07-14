@@ -31,6 +31,15 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    public List<Category> queryByBrandId(Long bid) {
+        List<Category> list=categoryMapper.queryByBrandId(bid);
+        if (CollectionUtils.isEmpty(list)){
+            throw new LyExcetion(ExceptionEnum.CATEGORY_NOT_FOUND);
+        }
+        return list;
+    }
+
+    @Override
     public void saveCategory(Category category) {
         int count = categoryMapper.insertSelective(category);
         if (count!=1){
